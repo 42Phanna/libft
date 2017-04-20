@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 11:28:23 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/20 17:14:05 by phanna           ###   ########.fr       */
+/*   Created: 2017/04/20 14:45:12 by phanna            #+#    #+#             */
+/*   Updated: 2017/04/20 15:19:24 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strnew(size_t size)
 {
-	size_t			i;
+	size_t	i;
+	char	*str;
 
+	if (!(str = (char*)malloc(sizeof(*str) * (size + 1))))
+		return (NULL);
 	i = 0;
-	while (((unsigned char*)s1)[i] == ((unsigned char *)s2)[i] && i < n)
-		i++;
-	if (((unsigned char*)s1)[i] && ((unsigned char*)s2)[i])
-		return (0);
-	return (((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
+	while (i <= size)
+		str[i++] = '\0';
+	return (str);
 }

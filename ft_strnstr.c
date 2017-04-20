@@ -6,7 +6,7 @@
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 12:52:52 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/18 13:52:40 by phanna           ###   ########.fr       */
+/*   Updated: 2017/04/20 17:14:25 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,5 @@ char	*ft_strnstr(const char *str, const char *tofind, size_t len)
 			return (tmp + i);
 		i++;
 	}
-	return (0);
-}
-#include <stdio.h>
-int	main()
-{
-	const char	a[] = "IBMZIRIBMZE123";
-	const char	b[] = "MZIRIBMZE";
-	printf("%s\n", ft_strnstr(a, b, 1500));
 	return (0);
 }

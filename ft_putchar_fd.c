@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 11:28:23 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/20 17:14:05 by phanna           ###   ########.fr       */
+/*   Created: 2017/04/20 14:41:09 by phanna            #+#    #+#             */
+/*   Updated: 2017/04/20 14:43:52 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t			i;
-
-	i = 0;
-	while (((unsigned char*)s1)[i] == ((unsigned char *)s2)[i] && i < n)
-		i++;
-	if (((unsigned char*)s1)[i] && ((unsigned char*)s2)[i])
-		return (0);
-	return (((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
+	write(fd, &c, 1);
 }
