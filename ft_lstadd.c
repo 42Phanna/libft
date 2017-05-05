@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/17 16:51:06 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/25 09:46:36 by phanna           ###   ########.fr       */
+/*   Created: 2017/04/28 08:57:53 by phanna            #+#    #+#             */
+/*   Updated: 2017/04/28 09:06:04 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	char		*tmpdst;
-	const char	*tmpsrc;
-
-	if (!len)
-		return (dst);
-	if (dst <= src)
-		ft_memcpy(dst, src, len);
-	else
-	{
-		tmpdst = (char*)dst;
-		tmpsrc = (const char *)src;
-		while (--len > 0)
-			tmpdst[len] = tmpsrc[len];
-		tmpdst[len] = tmpsrc[len];
-	}
-	return (dst);
+	new->next = *alst;
+	*alst = new;
 }

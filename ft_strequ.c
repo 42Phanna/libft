@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/17 16:51:06 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/25 09:46:36 by phanna           ###   ########.fr       */
+/*   Created: 2017/04/24 22:59:23 by phanna            #+#    #+#             */
+/*   Updated: 2017/04/25 10:42:23 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	char		*tmpdst;
-	const char	*tmpsrc;
+	int	i;
 
-	if (!len)
-		return (dst);
-	if (dst <= src)
-		ft_memcpy(dst, src, len);
-	else
+	i = 0;
+	if (s1 && s2)
 	{
-		tmpdst = (char*)dst;
-		tmpsrc = (const char *)src;
-		while (--len > 0)
-			tmpdst[len] = tmpsrc[len];
-		tmpdst[len] = tmpsrc[len];
+		while ((s1[i] == s2[i]) && s1[i] && s2[i])
+			++i;
+		if (s1[i] == '\0' && s2[i] == '\0')
+			return (1);
+		return (0);
 	}
-	return (dst);
+	return (0);
 }

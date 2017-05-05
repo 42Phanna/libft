@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/17 16:51:06 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/25 09:46:36 by phanna           ###   ########.fr       */
+/*   Created: 2017/04/25 04:23:58 by phanna            #+#    #+#             */
+/*   Updated: 2017/04/25 04:24:56 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	char		*tmpdst;
-	const char	*tmpsrc;
-
-	if (!len)
-		return (dst);
-	if (dst <= src)
-		ft_memcpy(dst, src, len);
-	else
+	if (nb == -2147483648)
 	{
-		tmpdst = (char*)dst;
-		tmpsrc = (const char *)src;
-		while (--len > 0)
-			tmpdst[len] = tmpsrc[len];
-		tmpdst[len] = tmpsrc[len];
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		ft_putnbr_fd(147483648, fd);
+		return ;
 	}
-	return (dst);
+	else if (nb < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb = nb * (-1);
+	}
+	if (nb > 9)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd((nb % 10) + 48, fd);
 }

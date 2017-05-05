@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/17 16:51:06 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/25 09:46:36 by phanna           ###   ########.fr       */
+/*   Created: 2017/04/24 22:31:30 by phanna            #+#    #+#             */
+/*   Updated: 2017/04/24 22:56:13 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
-	char		*tmpdst;
-	const char	*tmpsrc;
+	unsigned int	i;
+	char			*tab;
 
-	if (!len)
-		return (dst);
-	if (dst <= src)
-		ft_memcpy(dst, src, len);
-	else
+	i = 0;
+	if (s)
 	{
-		tmpdst = (char*)dst;
-		tmpsrc = (const char *)src;
-		while (--len > 0)
-			tmpdst[len] = tmpsrc[len];
-		tmpdst[len] = tmpsrc[len];
+		if (!(tab = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+			return (tab);
+		while (s[i])
+		{
+			tab[i] = f(i, s[i]);
+			i++;
+		}
+		tab[i] = '\0';
+		return (tab);
 	}
-	return (dst);
+	return (0);
 }

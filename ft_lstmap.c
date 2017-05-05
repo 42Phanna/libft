@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/17 16:51:06 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/25 09:46:36 by phanna           ###   ########.fr       */
+/*   Created: 2017/04/28 09:34:57 by phanna            #+#    #+#             */
+/*   Updated: 2017/04/30 15:32:35 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem))
 {
-	char		*tmpdst;
-	const char	*tmpsrc;
+	t_list	*new;
+	t_list	*tmp_new;
 
-	if (!len)
-		return (dst);
-	if (dst <= src)
-		ft_memcpy(dst, src, len);
-	else
+	tmp_new = f(lst);
+	new = tmp_new;
+	if (lst && f)
 	{
-		tmpdst = (char*)dst;
-		tmpsrc = (const char *)src;
-		while (--len > 0)
-			tmpdst[len] = tmpsrc[len];
-		tmpdst[len] = tmpsrc[len];
+		while (lst->next)
+		{
+			lst = lst->next;
+			tmp_new->next = f(lst);
+			tmp_new = tmp_new->next;
+		}
+		return (new);
 	}
-	return (dst);
+	return (0);
 }

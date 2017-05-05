@@ -6,7 +6,7 @@
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 10:42:32 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/20 17:23:05 by phanna           ###   ########.fr       */
+/*   Updated: 2017/04/25 09:37:58 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	ts = (unsigned char *)s;
 	cc = (unsigned char)c;
 	i = 0;
-	while (ts[i] != '\0' && ts[i] != cc && i < n)
+	while (i < n)
+	{
+		if (ts[i] == cc)
+			return (&ts[i]);
 		++i;
-	if (ts[i] == cc)
-		return (ts + i);
+	}
 	return (NULL);
 }

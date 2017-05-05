@@ -6,7 +6,7 @@
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 17:20:00 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/19 17:31:30 by phanna           ###   ########.fr       */
+/*   Updated: 2017/04/25 03:43:43 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_putstr(char const *s)
 {
-	size_t	c;
-
-	c = ft_strlen(s);
-	write(1, s, c);
+	if (s)
+		write(1, s, ft_strlen(s));
 }

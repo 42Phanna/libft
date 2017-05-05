@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/17 16:51:06 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/25 09:46:36 by phanna           ###   ########.fr       */
+/*   Created: 2017/04/24 23:30:16 by phanna            #+#    #+#             */
+/*   Updated: 2017/04/25 00:11:16 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char		*tmpdst;
-	const char	*tmpsrc;
+	int		i;
+	char	*tab;
 
-	if (!len)
-		return (dst);
-	if (dst <= src)
-		ft_memcpy(dst, src, len);
-	else
+	i = 0;
+	if (s)
 	{
-		tmpdst = (char*)dst;
-		tmpsrc = (const char *)src;
-		while (--len > 0)
-			tmpdst[len] = tmpsrc[len];
-		tmpdst[len] = tmpsrc[len];
+		if (!(tab = ((char*)malloc(sizeof(char) * (len + 1)))))
+			return (0);
+		while (s[start] && len)
+		{
+			tab[i] = s[start];
+			++i;
+			++start;
+			--len;
+		}
+		tab[i] = '\0';
+		return (tab);
 	}
-	return (dst);
+	return (0);
 }

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/17 16:51:06 by phanna            #+#    #+#             */
-/*   Updated: 2017/04/25 09:46:36 by phanna           ###   ########.fr       */
+/*   Created: 2017/05/04 15:06:13 by phanna            #+#    #+#             */
+/*   Updated: 2017/05/04 15:07:44 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	char		*tmpdst;
-	const char	*tmpsrc;
+	size_t	i;
+	char	*tab;
 
-	if (!len)
-		return (dst);
-	if (dst <= src)
-		ft_memcpy(dst, src, len);
-	else
+	i = 0;
+	if (!(tab = (char *)malloc(sizeof(char) * (n + 1))))
+		return (NULL);
+	while (s1[i] != '\0' && i < n)
 	{
-		tmpdst = (char*)dst;
-		tmpsrc = (const char *)src;
-		while (--len > 0)
-			tmpdst[len] = tmpsrc[len];
-		tmpdst[len] = tmpsrc[len];
+		tab[i] = s1[i];
+		i++;
 	}
-	return (dst);
+	tab[i] = '\0';
+	return (tab);
 }
