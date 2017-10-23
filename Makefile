@@ -6,13 +6,14 @@
 #    By: phanna <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/27 03:28:40 by phanna            #+#    #+#              #
-#    Updated: 2017/09/25 10:36:07 by phanna           ###   ########.fr        #
+#    Updated: 2017/10/23 13:34:15 by phanna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC_PATH = ./src/
+OBJ_PATH = ./obj/
 INC_PATH = ./inc/
 
 SRC_NAME =\
@@ -40,12 +41,12 @@ ft_memcmp.c				ft_strdup.c				ft_toupper.c\
 ft_memcpy.c				ft_strequ.c				ft_strndup.c\
 ft_strlowcase.c			ft_strcapitalize.c		ft_str_is_alpha.c\
 ft_str_is_numeric.c		ft_str_is_lowercase.c	ft_str_is_uppercase.c\
-ft_str_is_printable.c
+ft_str_is_printable.c	get_next_line.c
 
-OBJ = $(SRC_NAME:.c=.o)
+OBJ_NAME = $(SRC_NAME:.c=.o)
 
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
-#OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
+OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
 CC = gcc
 
@@ -55,11 +56,13 @@ all: $(NAME)
 
 $(NAME):
 	@$(CC) -c $(CFLAGS) $(SRC) 
+	@mkdir obj
+	@mv *.o obj
 	@ar rc $(NAME) $(OBJ)
 	@echo "generate libft"
 
 clean:
-	@rm -f $(OBJ) 
+	@rm -rf $(OBJ_PATH) 
 	@echo "cleaning objects files"
 
 fclean: clean

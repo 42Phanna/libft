@@ -6,18 +6,24 @@
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 14:16:22 by phanna            #+#    #+#             */
-/*   Updated: 2017/09/18 13:52:39 by phanna           ###   ########.fr       */
+/*   Updated: 2017/10/23 13:28:46 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <sys/types.h>
+# include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <fcntl.h>
 
+# define SUCCESS 1
+# define ERROR -1
 # define BUFF_SIZE 4096
+# define FD_MAX 10240
 
 typedef struct	s_list
 {
@@ -99,6 +105,7 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+int				get_next_line(const int fd, char **line);
 
 size_t			ft_strlen(const char *s);
 size_t			ft_strlen_skip_white(const char *s);
