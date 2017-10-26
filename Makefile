@@ -6,11 +6,23 @@
 #    By: phanna <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/27 03:28:40 by phanna            #+#    #+#              #
-#    Updated: 2017/10/26 11:15:14 by phanna           ###   ########.fr        #
+#    Updated: 2017/10/26 11:42:07 by phanna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+# Colors - Echo
+
+_END = $'\x1b[0m
+_GREY = $'\x1b[30m
+_RED = $'\x1b[31m
+_GREEN = $'\x1b[32m
+_YELLOW = $'\x1b[33m
+_BLUE = $'\x1b[34m
+_PURPLE = $'\x1b[35m
+_CYAN = $'\x1b[36m
+_WHITE = $'\x1b[37m
 
 SRC_PATH = ./src/
 OBJ_PATH = ./obj/
@@ -56,7 +68,7 @@ CPPFLAGS = -Iinc
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo ""
+	@echo "\n${_GREEN}libft generate${_END} [${_GREEN}✔${_END}]"
 	@ar rc $(NAME) $(OBJ) && ranlib $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
@@ -66,10 +78,10 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 
 clean:
 	@rm -rf $(OBJ_PATH) 
-	@echo "cleaning objects files"
+	@echo "${_RED}cleaning objects files${_END} [${_GREEN}✔${_END}]"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "delete $(NAME)"
+	@echo "${_RED}delete $(NAME)${_END} [${_GREEN}✔${_END}]"
 
 re: fclean all
