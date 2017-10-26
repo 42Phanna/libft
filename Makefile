@@ -6,7 +6,7 @@
 #    By: phanna <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/27 03:28:40 by phanna            #+#    #+#              #
-#    Updated: 2017/10/23 13:34:15 by phanna           ###   ########.fr        #
+#    Updated: 2017/10/26 11:15:14 by phanna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,21 +45,24 @@ ft_str_is_printable.c	get_next_line.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
-SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
-OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
+SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
+OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
 
 CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
+CPPFLAGS = -Iinc
 
 all: $(NAME)
 
-$(NAME):
-	@$(CC) -c $(CFLAGS) $(SRC) 
-	@mkdir obj
-	@mv *.o obj
-	@ar rc $(NAME) $(OBJ)
-	@echo "generate libft"
+$(NAME): $(OBJ)
+	@echo ""
+	@ar rc $(NAME) $(OBJ) && ranlib $(NAME)
+
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
+	@printf "\033[34;1m| \033[0;1m" 
 
 clean:
 	@rm -rf $(OBJ_PATH) 
