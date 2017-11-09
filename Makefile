@@ -6,7 +6,7 @@
 #    By: phanna <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/27 03:28:40 by phanna            #+#    #+#              #
-#    Updated: 2017/10/26 11:42:07 by phanna           ###   ########.fr        #
+#    Updated: 2017/11/08 16:37:34 by phanna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ $(NAME): $(OBJ)
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
-	@printf "\033[34;1m| \033[0;1m" 
+	@echo "${_GREEN}█${_END}\c"
 
 clean:
 	@rm -rf $(OBJ_PATH) 
