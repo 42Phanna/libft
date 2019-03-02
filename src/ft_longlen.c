@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_longlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phanna <phanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 12:18:30 by phanna            #+#    #+#             */
-/*   Updated: 2017/09/25 09:45:39 by phanna           ###   ########.fr       */
+/*   Created: 2018/03/05 15:43:24 by phanna            #+#    #+#             */
+/*   Updated: 2019/01/08 13:38:08 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-char    ft_toupper(char c)
+long	ft_longlen(long n)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
+	long	len;
+
+	len = 0;
+	if (n < 0)
+		n *= -1;
+	while (n)
+	{
+		n = n / 10;
+		++len;
+	}
+	return (len);
 }

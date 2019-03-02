@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_recur_power_long.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 12:18:30 by phanna            #+#    #+#             */
-/*   Updated: 2017/09/25 09:45:39 by phanna           ###   ########.fr       */
+/*   Created: 2018/03/05 10:50:37 by phanna            #+#    #+#             */
+/*   Updated: 2018/03/05 14:18:55 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-char    ft_toupper(char c)
+long	ft_recur_power_long(long long nb, int pow)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
+	if (nb == 1)
+		return (1);
+	if (pow < 0)
+		return (0);
+	if (pow == 0)
+		return (1);
+	if (nb == 0)
+		return (0);
+	return (nb * ft_recur_power_long(nb, pow - 1));
 }

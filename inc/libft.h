@@ -62,6 +62,12 @@ void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 
 char			*ft_itoa(int n);
+char			*ft_uitoa(unsigned int n);
+char			*ft_ftoa(float f, int d);
+char			*ft_uitoa_base(unsigned int n, int base);
+char			*ft_ltoa(long long nb);
+char			*ft_ultoa(unsigned long long n);
+char			*ft_ultoa_base(unsigned long long n, int base);
 char			*ft_strnew(size_t size);
 char			*ft_strstr(const char *str, const char *tofind);
 char			*ft_strnstr(const char *str, const char *tofind, size_t len);
@@ -81,6 +87,8 @@ char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *str, char c);
 char			*ft_strlowcase(char *str);
 char			*ft_strcapitalize(char *str);
+char			ft_toupper(char c);
+char			ft_tomin(char c);
 
 int				ft_str_is_alpha(char *str);
 int				ft_str_is_numeric(char *str);
@@ -93,6 +101,8 @@ int				ft_strequ(const char *s1, const char *s2);
 int				ft_strnequ(const char *s1, const char *s2, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 int				ft_numlen(int n);
+int				ft_uintlen(unsigned int n);
+int				ft_uintlen_base(unsigned int n, int base);
 int				ft_sqrt(int nb);
 int				ft_factorial(int nb);
 int				ft_power(int nb, int power);
@@ -104,8 +114,10 @@ int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_tolower(int c);
-int				ft_toupper(int c);
 int				get_next_line(const int fd, char **line);
+
+long			ft_longlen(long n);
+long			ft_recur_power_long(long long nb, int pow);
 
 size_t			ft_strlen(const char *s);
 size_t			ft_strlen_skip_white(const char *s);

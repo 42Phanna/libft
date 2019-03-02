@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phanna <phanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 12:18:30 by phanna            #+#    #+#             */
-/*   Updated: 2017/09/25 09:45:39 by phanna           ###   ########.fr       */
+/*   Created: 2017/09/18 09:08:41 by phanna            #+#    #+#             */
+/*   Updated: 2018/02/01 19:26:50 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "ft_printf.h"
 
-char    ft_toupper(char c)
+int	ft_printf(const char *format, ...)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
+	t_printf	box;
+
+	ft_bzero(&box, sizeof(box));
+	va_start(box.ap, format);
+	test_char(format, &box);
+	va_end(box.ap);
+	return (box.len);
 }

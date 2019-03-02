@@ -1,20 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_ultoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 12:18:30 by phanna            #+#    #+#             */
-/*   Updated: 2017/09/25 09:45:39 by phanna           ###   ########.fr       */
+/*   Created: 2018/03/12 15:09:49 by phanna            #+#    #+#             */
+/*   Updated: 2018/03/12 15:14:08 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-char    ft_toupper(char c)
+int		ft_ulonglonglen(unsigned long long n)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
+	int	i;
+
+	i = 0;
+	while (n)
+	{
+		n = n / 10;
+		++i;
+	}
+	return (i);
+}
+
+char	*ft_ultoa(unsigned long long n)
+{
+	int		len;
+	char	*tab;
+
+	if (!n)
+		return (ft_strdup("0"));
+	len = ft_ulonglonglen(n);
+	tab = (char *)ft_memalloc(len + 1);
+	tab[len--] = '\0';
+	while (n)
+	{
+		tab[len--] = n % 10 + 48;
+		n = n / 10;
+	}
+	return (tab);
 }
