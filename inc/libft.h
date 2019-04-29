@@ -6,7 +6,7 @@
 /*   By: phanna <phanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 14:16:22 by phanna            #+#    #+#             */
-/*   Updated: 2019/04/29 16:03:26 by phanna           ###   ########.fr       */
+/*   Updated: 2019/04/29 16:13:21 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ t_list			*ft_create_elem(void *data);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 t_list			*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem));
 
+void			ft_delmap(int **map, int x, int y);
+void			ft_deltab(char **tab);
 void			ft_lstdelone(t_list **alst, void (*del) (void*, size_t));
 void			ft_lstdel(t_list **alst, void (*del) (void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
@@ -108,6 +110,7 @@ int				ft_factorial(int nb);
 int				ft_power(int nb, int power);
 int				ft_isspace(char c);
 int				ft_atoi(char *str);
+int				ft_linisdigit(char *str);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);

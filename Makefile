@@ -6,7 +6,7 @@
 #    By: phanna <phanna@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/27 03:28:40 by phanna            #+#    #+#              #
-#    Updated: 2019/04/29 16:07:55 by phanna           ###   ########.fr        #
+#    Updated: 2019/04/29 16:13:02 by phanna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ ft_strlowcase.c			ft_strcapitalize.c		ft_str_is.c\
 get_next_line.c			\
 ft_ltoa.c							\
 ft_ultoa.c							ft_uitoa.c\
-				ft_ftoa.c\
+ft_ftoa.c				ft_del.c				ft_linisdigit.c\
 
 INC_PTF_NAME = ft_printf.h
 
