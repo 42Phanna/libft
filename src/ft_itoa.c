@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phanna <phanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/26 12:53:21 by phanna            #+#    #+#             */
-/*   Updated: 2017/09/25 09:36:51 by phanna           ###   ########.fr       */
+/*   Updated: 2019/04/29 15:58:43 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_itoa(int n)
 		neg = 1;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	len = ft_numlen(n);
+	len = ft_intlen(n);
 	if (!(tab = (char *)malloc(sizeof(char) * (len + neg + 1))))
 		return (0);
 	len += neg;

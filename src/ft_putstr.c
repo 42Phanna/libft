@@ -6,11 +6,11 @@
 /*   By: phanna <phanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 17:20:00 by phanna            #+#    #+#             */
-/*   Updated: 2019/04/29 14:30:46 by phanna           ###   ########.fr       */
+/*   Updated: 2019/04/29 15:53:17 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 void	ft_putstr(char const *s)
 {

@@ -6,7 +6,7 @@
 #    By: phanna <phanna@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/27 03:28:40 by phanna            #+#    #+#              #
-#    Updated: 2019/04/29 15:41:23 by phanna           ###   ########.fr        #
+#    Updated: 2019/04/29 16:07:55 by phanna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,30 +38,30 @@ SRC_NAME =\
 ft_atoi.c				ft_memdel.c				ft_striter.c\
 ft_bzero.c				ft_memmove.c			ft_striteri.c\
 ft_create_elem.c		ft_memset.c				ft_strjoin.c\
-ft_factorial.c			ft_numlen.c				\
-ft_isalnum.c			ft_power.c				ft_strlen.c\
-ft_isalpha.c			ft_putchar.c			ft_strlen_skip_white.c\
-ft_isascii.c									ft_strmap.c\
-ft_isdigit.c			ft_putendl.c			ft_strmapi.c\
-ft_isprint.c									ft_strncat.c\
-ft_isspace.c			ft_putnbr.c				ft_strncmp.c\
-ft_itoa.c										ft_strncpy.c\
-ft_lstadd.c				ft_putstr.c				ft_strnequ.c\
+ft_maths.c			ft_numlen.c				\
+							ft_strlen.c\
+ft_is.c			ft_putchar.c			\
+									ft_strmap.c\
+			ft_putendl.c			\
+									\
+ft_isspace.c			ft_putnbr.c				\
+ft_itoa.c										\
+ft_lstadd.c				ft_putstr.c				\
 ft_lstdel.c										ft_strnew.c\
-ft_lstdelone.c			ft_sqrt.c				ft_strnstr.c\
-ft_lstiter.c			ft_strcat.c				ft_strrchr.c\
+ft_lstdelone.c			ft_to.c		\
+ft_lstiter.c			ft_strcat.c				\
 ft_lstmap.c				ft_strchr.c				ft_strsplit.c\
 ft_lstnew.c				ft_strclr.c				ft_strstr.c\
 ft_memalloc.c			ft_strcmp.c				ft_strsub.c\
 ft_memccpy.c			ft_strcpy.c				ft_strtrim.c\
-ft_memchr.c				ft_strdel.c				ft_tolower.c\
-ft_memcmp.c				ft_strdup.c				ft_toupper.c\
-ft_memcpy.c				ft_strequ.c				ft_strndup.c\
+ft_memchr.c				ft_strdel.c				\
+ft_memcmp.c				ft_strdup.c				\
+ft_memcpy.c				ft_strequ.c				\
 ft_strlowcase.c			ft_strcapitalize.c		ft_str_is.c\
-get_next_line.c			ft_recur_power_long.c\
-ft_ltoa.c				ft_longlen.c			ft_uitoa_base.c\
-ft_ultoa.c				ft_ultoa_base.c			ft_uitoa.c\
-ft_tomin.c				ft_ftoa.c\
+get_next_line.c			\
+ft_ltoa.c							\
+ft_ultoa.c							ft_uitoa.c\
+				ft_ftoa.c\
 
 INC_PTF_NAME = ft_printf.h
 
@@ -102,13 +102,11 @@ $(NAME): $(OBJ) $(OBJ_PTF)
 
 $(OBJ_PTF_PATH)%.o: $(SRC_PTF_PATH)%.c $(INC_PTF)
 	@mkdir $(OBJ_PTF_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) $(PTFCPPFLAGS) -o $@ -c $<
-	@echo "${_PURPLE}█${_END}\c"
+	$(CC) $(CFLAGS) $(PTFCPPFLAGS) -o $@ -c $<
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INC)
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
-	@echo "${_GREEN}█${_END}\c"
+	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 clean:
 	@rm -rf $(OBJ_PATH)

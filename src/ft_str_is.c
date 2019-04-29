@@ -6,11 +6,11 @@
 /*   By: phanna <phanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 15:12:00 by phanna            #+#    #+#             */
-/*   Updated: 2019/04/29 15:36:15 by phanna           ###   ########.fr       */
+/*   Updated: 2019/04/29 15:54:36 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 int	ft_str_is_alpha(char *str)
 {

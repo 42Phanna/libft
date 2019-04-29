@@ -6,7 +6,7 @@
 /*   By: phanna <phanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 14:16:22 by phanna            #+#    #+#             */
-/*   Updated: 2019/04/29 15:41:21 by phanna           ###   ########.fr       */
+/*   Updated: 2019/04/29 16:03:26 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strequ(const char *s1, const char *s2);
 int				ft_strnequ(const char *s1, const char *s2, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
-int				ft_numlen(int n);
+int				ft_intlen(int n);
 int				ft_uintlen(unsigned int n);
 int				ft_uintlen_base(unsigned int n, int base);
 int				ft_sqrt(int nb);

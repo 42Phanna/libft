@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phanna <phanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/26 12:56:12 by phanna            #+#    #+#             */
-/*   Updated: 2017/09/25 09:38:13 by phanna           ###   ########.fr       */
+/*   Updated: 2019/04/29 15:50:58 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-int	ft_numlen(int n)
+int	ft_intlen(int n)
 {
 	int	i;
 
@@ -27,4 +27,19 @@ int	ft_numlen(int n)
 		++i;
 	}
 	return (i);
+}
+
+long	ft_longlen(long n)
+{
+	long	len;
+
+	len = 0;
+	if (n < 0)
+		n *= -1;
+	while (n)
+	{
+		n = n / 10;
+		++len;
+	}
+	return (len);
 }
