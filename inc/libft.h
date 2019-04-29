@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phanna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phanna <phanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 14:16:22 by phanna            #+#    #+#             */
-/*   Updated: 2017/10/23 13:28:46 by phanna           ###   ########.fr       */
+/*   Updated: 2019/04/29 15:41:21 by phanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,5 @@ long			ft_recur_power_long(long long nb, int pow);
 
 size_t			ft_strlen(const char *s);
 size_t			ft_strlen_skip_white(const char *s);
-size_t			ft_strlcat(char *dst, const char *src, size_t size);
 
 #endif

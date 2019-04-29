@@ -6,7 +6,7 @@
 #    By: phanna <phanna@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/27 03:28:40 by phanna            #+#    #+#              #
-#    Updated: 2019/04/29 15:36:54 by phanna           ###   ########.fr        #
+#    Updated: 2019/04/29 15:41:23 by phanna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRC_NAME =\
 ft_atoi.c				ft_memdel.c				ft_striter.c\
 ft_bzero.c				ft_memmove.c			ft_striteri.c\
 ft_create_elem.c		ft_memset.c				ft_strjoin.c\
-ft_factorial.c			ft_numlen.c				ft_strlcat.c\
+ft_factorial.c			ft_numlen.c				\
 ft_isalnum.c			ft_power.c				ft_strlen.c\
 ft_isalpha.c			ft_putchar.c			ft_strlen_skip_white.c\
 ft_isascii.c									ft_strmap.c\
